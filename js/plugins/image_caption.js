@@ -57,10 +57,10 @@
   $.Editable.prototype.bindKeyboardCaptionDeletionHandler = function() {
     $('.froala-element').on('keydown', function(e) {
       if (e.keyCode == 8 || e.keyCode == 46) {
-        $(this).find('.thumbnail .caption').each(function(i, caption) {
-          if ($.trim($(caption).text()) === '') {
+        $(this).find('.thumbnail .caption').each(function (i, caption) {
+          if ($.trim($(caption).text()) !== '') {
             var $img = $(caption).closest('.thumbnail').find('img');
-            $(caption).closest('.thumbnail').replaceWith('<p>'+$img.get(0).outerHTML+'</p>');
+            $(caption).closest('.post-caption-container').replaceWith('<p>' + $img.get(0).outerHTML + '</p>');
           }
         });
       }
