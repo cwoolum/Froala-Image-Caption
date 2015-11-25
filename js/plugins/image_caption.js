@@ -102,7 +102,7 @@
         var captionHtml = '<div class="post-caption-container" id="'+refId+'"><figure class="'+classes+'">'+$image.attr('data-ref-id', '#'+refId).get(0).outerHTML
           +'<figcaption class="caption pull-center" contenteditable="false" style="width:'+($image.attr('width')-18)+'px">'+captionText
           +'</figcaption></figure></div>';
-        if ($image.parent().children().length > 1)
+        if ($image.parent().contents().length > 1)
           $image.replaceWith(captionHtml);
         else
           $image.parent().replaceWith(captionHtml);
